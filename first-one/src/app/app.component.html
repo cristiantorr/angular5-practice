@@ -7,10 +7,14 @@
 </div>
 <div class="container">
   <div class="card-panel teal lighten-2">Here application!</div>
-  <!-- componente que creamos-->
-  <dog-details></dog-details>
-  <dog-details></dog-details>
-  <dog-details></dog-details>
-  <dog-details></dog-details>
-  <dog-details></dog-details>
+  <!-- nuevo componente con comandos como ng generate component dog-list or ng g c dog-list --prefix false-->
+  <dog-list></dog-list>
+  <!-- componente que creamos se imprime cristian-->
+  <!-- <dog-details></dog-details>- -->
+  <!-- Con la importación input -->
+  <dog-details name="harry" (bark)="doBark(dog2.name)"></dog-details>
+  <dog-details name="joder" (bark)="doBark(dog2.name)"></dog-details>
+  <!-- Con [dog]-->
+  <dog-details [name]="dog1.name" [color]="dog1.color" (nameChange)="changeDog1($event)" (bark)="doBark(dog1.name)"></dog-details>
+  <dog-details [name]="dog2.name" [color]="dog2.color" (bark)="doBark(dog2.name)"></dog-details>
 </div>
