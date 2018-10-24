@@ -4,7 +4,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
    selector: "dog-details",
    template: `
       <h2>{{name}} - {{color}}</h2>
-      <input (input)="handleNameChange($event)" type="text" />
+      <input (input)="handleNameChange($event)" type="text" placeholder = "Nombres" />
+      <input (input)="handleColorChange($event)" type="text" placeholder = "Color" />
       <button class="btn btn-waves" (click) = "handleClick()">event button</button>
    `
 })
@@ -14,8 +15,9 @@ export class DogDetailsComponent{
   @Input() name:string; /*harry y joder imprimen */
   @Input() color:string; /*harry y joder imprimen */
 
-  @Output() bark = new EventEmitter<{}>();
+  @Output() bark        = new EventEmitter<{}>();
   @Output() nameChange = new EventEmitter<string>();
+  @Output() colorChange = new EventEmitter<string>();
 
   handleClick(){
     this.bark.emit({});
@@ -23,7 +25,11 @@ export class DogDetailsComponent{
 
   handleNameChange(e){
      //console.log(e.target.value);
-     this.nameChange.emit(e.target.value)
+     this.nameChange.emit(e.target.value);
 
+  }
+
+  handleColorChange(e) {
+    this.colorChange.emit(e.target.value);
   }
 }

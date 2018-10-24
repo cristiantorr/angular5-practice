@@ -1,3 +1,7 @@
-<p>
-  dog-list works new component!
-</p>
+<div>
+  <dog-details
+  [(name)] = "dog1.name"
+  [(color)] = "dog1.color"
+  (nameChange) = "changeDog1($event)"
+  (bark) = "doBark(dog1.name)"></dog-details>
+</div>

@@ -1,20 +1,12 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
   <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 </div>
 <div class="container">
-  <div class="card-panel teal lighten-2">Here application!</div>
-  <!-- nuevo componente con comandos como ng generate component dog-list or ng g c dog-list --prefix false-->
+  <h1>
+    {{name}}
+  </h1>
+  <input type="text" name="" value="" placeholder="title" [(ngModel)]="name" />
   <dog-list></dog-list>
-  <!-- componente que creamos se imprime cristian-->
-  <!-- <dog-details></dog-details>- -->
-  <!-- Con la importación input -->
-  <dog-details name="harry" (bark)="doBark(dog2.name)"></dog-details>
-  <dog-details name="joder" (bark)="doBark(dog2.name)"></dog-details>
-  <!-- Con [dog]-->
-  <dog-details [name]="dog1.name" [color]="dog1.color" (nameChange)="changeDog1($event)" (bark)="doBark(dog1.name)"></dog-details>
-  <dog-details [name]="dog2.name" [color]="dog2.color" (bark)="doBark(dog2.name)"></dog-details>
+
 </div>
